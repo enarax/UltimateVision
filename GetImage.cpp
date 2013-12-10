@@ -8,7 +8,6 @@ Mat GetImageFromWebcam()
 {
 	//Read the video stream
 	CvCapture* capture = cvCaptureFromCAM(1);
-	IplImage* frame = cvQueryFrame( capture );
-
+	IplImage* frame = cvQueryFrame( capture ); 
 	return Mat(frame);
 }
