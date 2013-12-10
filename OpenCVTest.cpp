@@ -47,12 +47,12 @@ while (true)
 
 	//contours
 	vector<vector<Point> > contours;
-	vector<vector<Point>> contours_poly;
+	vector<vector<Point> > contours_poly;
 	vector<Vec4i> hierarchy;
 	findContours(filtered_grey, contours, hierarchy, CV_RETR_TREE, CV_CHAIN_APPROX_SIMPLE, Point(0,0));
 		//get the areas
 		vector<double> areas;
-		for(int i = 0; i < contours.size(); i++)
+		for(unsigned int i = 0; i < contours.size(); i++)
 		{
 			vector<Point> poly;
 			approxPolyDP(contours[i], poly, 10, true);
@@ -62,7 +62,7 @@ while (true)
 	//draw the biggest
 	int biggest_index = -1;
 	int biggest_area = 0;
-	for(int i = 0; i < areas.size(); i++)
+	for(unsigned int i = 0; i < areas.size(); i++)
 	{
 		if(areas[i] > biggest_area)
 		{

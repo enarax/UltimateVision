@@ -33,10 +33,6 @@ Mat FilterImage(Mat image)
 			if(s < MINSATURATION || s > MAXSATURATION) //saturation not within limits
 				hsv.at<Vec3b>(ref) = Vec3b();
 
-			if(x == 360 && y == 240)
-			{
-				int a = 1;
-			}
 		}
 	}
 
