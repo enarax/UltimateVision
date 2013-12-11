@@ -5,6 +5,6 @@
 
 using namespace cv;
 
-Mat GetImageFromWebcam();
+Mat GetImageFromWebcam(CvCapture *capture);
 
 #endif

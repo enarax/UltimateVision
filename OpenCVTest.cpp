@@ -20,6 +20,14 @@ int const kernel_size = 3;
 */
 int main( int argc, const char** argv )
 {
+
+	CvCapture* capture = cvCaptureFromCAM(0);
+        if (! capture)
+        {
+            fprintf(stderr, "Cannot capture from webcam.\n");
+            exit(0);
+        }
+
  
 while (true)
 {
@@ -28,7 +36,7 @@ while (true)
 	cvNamedWindow("Sample Program", CV_WINDOW_AUTOSIZE);
 	  //createTrackbar( "Min Threshold:", "Sample program", &lowThreshold, 100, nullptr );
  
-	Mat src = GetImageFromWebcam();
+	Mat src = GetImageFromWebcam(capture);
 	Mat blurred;
 	GaussianBlur(src, blurred, Size(BLURSIZE, BLURSIZE), 1.0);
 	
