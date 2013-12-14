@@ -1,10 +1,9 @@
 #include "stdafx.h"
 #include "ColorFilter.h"
-#include "Settings.h"
 
 #define UINT8 unsigned char
 
-Mat FilterImage(Mat image)
+Mat FilterImage(const Mat& image)
 {
 	Mat hsv;
 
